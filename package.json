@@ -1,0 +1,21 @@
+{
+  "name": "mercy-shared",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SIT-Mercy/shared.git"
+  },
+  "author": "SIT-Mercy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SIT-Mercy/shared/issues"
+  },
+  "homepage": "https://github.com/SIT-Mercy/shared#readme",
+  "dependencies": {
+    "typescript": "^4.9.5"
+  }
+}
