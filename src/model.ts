@@ -25,7 +25,7 @@ export interface Student {
   /**
    * Immutable
    */
-  studentID: string
+  studentId: string
   name: string
   college: string
   poorLv: PoorLevel
@@ -68,6 +68,10 @@ export interface Staff {
    * To keep concurrency
    */
   version: Int32 | number
+  /**
+   * Whether the staff is employed.
+   */
+  active: boolean
 }
 
 enum PointChangeReason {
