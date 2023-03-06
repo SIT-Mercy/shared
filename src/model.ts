@@ -3,8 +3,8 @@ import { StaffPermission } from "./auth.js"
 
 export type Int = number
 export type Double = number
-export type Amount = Int
-export type Point = Int
+export type Amount = Int | number
+export type Point = Int | number
 
 export enum StudentError {
   notFound = "studentNotFound",
@@ -48,7 +48,7 @@ export interface Student {
   /**
    * To keep concurrency
    */
-  version: Int
+  version: Int | number
 }
 
 export interface Staff {
@@ -74,7 +74,7 @@ export interface Staff {
   /**
    * To keep concurrency
    */
-  version: Int
+  version: Int | number
   /**
    * Whether the staff is employed.
    */
@@ -92,8 +92,8 @@ export interface PointChangeRecord {
   _id: ObjectId
   subject_id: ObjectId
   operator_id: ObjectId
-  beforeChange: Point
-  afterChange: Point
+  beforeChange: Point | number
+  afterChange: Point | number
   reason: PointChangeReason | null
   /**
    * Immutable
@@ -106,10 +106,10 @@ export interface TranscationRecord {
   customer_id: ObjectId
   operator_id: ObjectId
   item_id: ObjectId
-  amount: Amount
-  unitPrice: Point
-  priceFactor: Double
-  finalTotalPrice: Point
+  amount: Amount | number
+  unitPrice: Point | number
+  priceFactor: Double | number
+  finalTotalPrice: Point | number
   notes: string | null
   /**
    * Immutable
@@ -123,7 +123,7 @@ export interface Item {
   description: string
   price: Point | null
   rent: Point | null
-  poorPriceFactor: Double
+  poorPriceFactor: Double | number
   /**
    * Immutable
    */
@@ -143,8 +143,8 @@ export interface ItemAmountChangeRecord {
   item_id: ObjectId
   related_id: ObjectId | null
   reason: ItemAmountChangeReason | null
-  beforeChange: Amount
-  afterChange: Amount
+  beforeChange: Amount | number
+  afterChange: Amount | number
   /**
    * Immutable
    */
@@ -184,5 +184,5 @@ export interface RentalRecord {
   /**
    * To keep concurrency
    */
-  version: Int
+  version: Int | number
 }
