@@ -22,19 +22,32 @@ export enum PoorLevel {
 
 export interface Student {
   _id: ObjectId
+  /**
+   * Immutable
+   */
   studentID: string
   name: string
   college: string
   poorLv: PoorLevel
   point: Point
+  /**
+   * Immutable
+   */
   creationTime: Date
   /**
    * Null when the student not yet to provide it.
    */
   phone: string | null
+  /**
+   * To keep concurrency
+   */
+  version: Int32
 }
 
 export interface Staff {
+  /**
+   * Immutable
+   */
   studentId: string
   _id: ObjectId
   /**
@@ -47,7 +60,14 @@ export interface Staff {
    */
   student_id: ObjectId
   permissions: StaffPermission[]
+  /**
+   * Immutable
+   */
   creationTime: Date
+  /**
+   * To keep concurrency
+   */
+  version: Int32
 }
 
 enum PointChangeReason {
@@ -64,6 +84,9 @@ export interface PointChangeRecord {
   beforeChange: Point
   afterChange: Point
   reason: PointChangeReason | null
+  /**
+   * Immutable
+   */
   creationTime: Date
 }
 
@@ -77,6 +100,9 @@ export interface TranscationRecord {
   priceFactor: Double
   finalTotalPrice: Point
   notes: string | null
+  /**
+   * Immutable
+   */
   creationTime: Date
 }
 
@@ -87,6 +113,9 @@ export interface Item {
   price: Point | null
   rent: Point | null
   poorPriceFactor: Double
+  /**
+   * Immutable
+   */
   creationTime: Date
 }
 
@@ -105,6 +134,9 @@ export interface ItemAmountChangeRecord {
   reason: ItemAmountChangeReason | null
   beforeChange: Amount
   afterChange: Amount
+  /**
+   * Immutable
+   */
   creationTime: Date
 }
 
@@ -113,6 +145,9 @@ export interface DonationRecord {
   donator_id: ObjectId
   operator_id: ObjectId
   note: string
+  /**
+   * Immutable
+   */
   creationTime: Date
 }
 
@@ -130,6 +165,13 @@ export interface RentalRecord {
   phoneNumber: string
   deadline: Date
   renewalRecords: RenewalRecord[]
-  creationTime: Date
   returnTime: Date | null
+  /**
+   * Immutable
+   */
+  creationTime: Date
+  /**
+   * To keep concurrency
+   */
+  version: Int32
 }
