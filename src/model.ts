@@ -14,6 +14,7 @@ export enum StudentError {
 export enum StaffError {
   staffNotFound = "staffNotFound",
   invalidStaffInfo = "invalidStaffInfo",
+  invalidStaffQuery = "invalidStaffQuery"
 }
 
 export enum PoorLevel {

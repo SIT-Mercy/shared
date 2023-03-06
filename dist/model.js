@@ -9,6 +9,7 @@ export var StaffError;
 (function (StaffError) {
     StaffError["staffNotFound"] = "staffNotFound";
     StaffError["invalidStaffInfo"] = "invalidStaffInfo";
+    StaffError["invalidStaffQuery"] = "invalidStaffQuery";
 })(StaffError || (StaffError = {}));
 export var PoorLevel;
 (function (PoorLevel) {
