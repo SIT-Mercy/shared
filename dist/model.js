@@ -1,17 +1,17 @@
 export var StudentError;
 (function (StudentError) {
-    StudentError["studentNotFound"] = "studentNotFound";
-    StudentError["invalidStudentQuery"] = "invalidStudentQuery";
+    StudentError["notFound"] = "studentNotFound";
+    StudentError["invalidQuery"] = "invalidStudentQuery";
     StudentError["alreadyExists"] = "alreadyExists";
-    StudentError["invalidStudentInfo"] = "invalidStudentInfo";
+    StudentError["invalidInfo"] = "invalidStudentInfo";
 })(StudentError || (StudentError = {}));
 export var StaffError;
 (function (StaffError) {
     StaffError["noPermission"] = "noPermission";
-    StaffError["staffNotFound"] = "staffNotFound";
-    StaffError["invalidStaffInfo"] = "invalidStaffInfo";
+    StaffError["notFound"] = "staffNotFound";
+    StaffError["invalidInfo"] = "invalidStaffInfo";
     StaffError["alreadyExists"] = "alreadyExists";
-    StaffError["invalidStaffQuery"] = "invalidStaffQuery";
+    StaffError["invalidQuery"] = "invalidStaffQuery";
 })(StaffError || (StaffError = {}));
 export var PoorLevel;
 (function (PoorLevel) {

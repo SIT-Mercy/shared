@@ -2,8 +2,7 @@ export enum AuthError {
   missingHeader = "missingAuthHeader",
   invalidJwt = "invalidJwt",
   expiredJwt = "expiredJwt",
-  wrongStudentIdOrPassword = "wrongStudentIdOrPassword",
-  staffNotFound = "staffNotFound",
+  wrongCredentials = "wrongCredentials",
   noPermission = "noPermission",
 }
 

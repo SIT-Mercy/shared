@@ -5,18 +5,18 @@ export type Amount = Int32 | number
 export type Point = Int32 | number
 
 export enum StudentError {
-  studentNotFound = "studentNotFound",
-  invalidStudentQuery = "invalidStudentQuery",
+  notFound = "studentNotFound",
+  invalidQuery = "invalidStudentQuery",
   alreadyExists = "alreadyExists",
-  invalidStudentInfo = "invalidStudentInfo",
+  invalidInfo = "invalidStudentInfo",
 }
 
 export enum StaffError {
   noPermission = "noPermission",
-  staffNotFound = "staffNotFound",
-  invalidStaffInfo = "invalidStaffInfo",
+  notFound = "staffNotFound",
+  invalidInfo = "invalidStaffInfo",
   alreadyExists = "alreadyExists",
-  invalidStaffQuery = "invalidStaffQuery"
+  invalidQuery = "invalidStaffQuery"
 }
 
 export enum PoorLevel {
