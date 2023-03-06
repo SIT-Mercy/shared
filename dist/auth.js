@@ -2,6 +2,7 @@ export var AuthError;
 (function (AuthError) {
     AuthError["missingHeader"] = "missingAuthHeader";
     AuthError["invalidJwt"] = "invalidJwt";
+    AuthError["expiredJwt"] = "expiredJwt";
     AuthError["wrongStudentIdOrPassword"] = "wrongStudentIdOrPassword";
     AuthError["staffNotFound"] = "staffNotFound";
     AuthError["noPermission"] = "noPermission";
