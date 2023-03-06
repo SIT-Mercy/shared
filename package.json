@@ -24,5 +24,8 @@
   "homepage": "https://github.com/SIT-Mercy/shared#readme",
   "dependencies": {
     "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "mongodb": "^5.1.0"
   }
 }
