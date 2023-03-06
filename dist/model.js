@@ -1,9 +1,13 @@
 export var StudentError;
 (function (StudentError) {
     StudentError["noPermission"] = "noPermission";
-    StudentError["noSuchStudent"] = "noSuchStudent";
+    StudentError["studentNotFound"] = "studentNotFound";
     StudentError["studentIdNotGiven"] = "studentIdNotGiven";
 })(StudentError || (StudentError = {}));
+export var StaffError;
+(function (StaffError) {
+    StaffError["staffNotFound"] = "staffNotFound";
+})(StaffError || (StaffError = {}));
 export var PoorLevel;
 (function (PoorLevel) {
     PoorLevel[PoorLevel["notPoor"] = 0] = "notPoor";

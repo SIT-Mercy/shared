@@ -6,8 +6,12 @@ export type Point = Int32
 
 export enum StudentError {
   noPermission = "noPermission",
-  noSuchStudent = "noSuchStudent",
+  studentNotFound = "studentNotFound",
   studentIdNotGiven = "studentIdNotGiven",
+}
+
+export enum StaffError {
+  staffNotFound = "staffNotFound",
 }
 
 export enum PoorLevel {
