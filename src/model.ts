@@ -1,8 +1,10 @@
-import type { ObjectId, Int32, Double } from "mongodb"
+import type { ObjectId } from "mongodb"
 import { StaffPermission } from "./auth.js"
 
-export type Amount = Int32 | number
-export type Point = Int32 | number
+export type Int = number
+export type Double = number
+export type Amount = Int
+export type Point = Int
 
 export enum StudentError {
   notFound = "studentNotFound",
@@ -46,7 +48,7 @@ export interface Student {
   /**
    * To keep concurrency
    */
-  version: Int32 | number
+  version: Int
 }
 
 export interface Staff {
@@ -72,7 +74,7 @@ export interface Staff {
   /**
    * To keep concurrency
    */
-  version: Int32 | number
+  version: Int
   /**
    * Whether the staff is employed.
    */
@@ -106,7 +108,7 @@ export interface TranscationRecord {
   item_id: ObjectId
   amount: Amount
   unitPrice: Point
-  priceFactor: Double | number
+  priceFactor: Double
   finalTotalPrice: Point
   notes: string | null
   /**
@@ -121,7 +123,7 @@ export interface Item {
   description: string
   price: Point | null
   rent: Point | null
-  poorPriceFactor: Double | number
+  poorPriceFactor: Double
   /**
    * Immutable
    */
@@ -182,5 +184,5 @@ export interface RentalRecord {
   /**
    * To keep concurrency
    */
-  version: Int32 | number
+  version: Int
 }
