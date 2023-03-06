@@ -4,6 +4,7 @@ export var AuthError;
     AuthError["invalidJwt"] = "invalidJwt";
     AuthError["wrongStudentIdOrPassword"] = "wrongStudentIdOrPassword";
     AuthError["staffNotFound"] = "staffNotFound";
+    AuthError["noPermission"] = "noPermission";
 })(AuthError || (AuthError = {}));
 export var StaffPermission;
 (function (StaffPermission) {

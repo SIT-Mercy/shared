@@ -1,8 +1,14 @@
 import type { ObjectId, Int32, Double } from "mongodb"
-import { StaffPermission } from "./auth"
+import { StaffPermission } from "./auth.js"
 
 export type Amount = Int32
 export type Point = Int32
+
+export enum StudentError {
+  noPermission = "noPermission",
+  noSuchStudent = "noSuchStudent",
+  studentIdNotGiven = "studentIdNotGiven",
+}
 
 export enum PoorLevel {
   notPoor = 0,

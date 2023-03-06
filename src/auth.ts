@@ -3,6 +3,7 @@ export enum AuthError {
   invalidJwt = "invalidJwt",
   wrongStudentIdOrPassword = "wrongStudentIdOrPassword",
   staffNotFound = "staffNotFound",
+  noPermission = "noPermission",
 }
 
 export enum StaffPermission {
