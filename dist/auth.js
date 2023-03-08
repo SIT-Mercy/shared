@@ -13,5 +13,6 @@ export var StaffPermission;
     StaffPermission["alterPoint"] = "alterPoint";
     StaffPermission["alterStudentInfo"] = "alterStudentInfo";
     StaffPermission["alterStudentDetail"] = "alterStudentDetail";
+    StaffPermission["alterItems"] = "alterItems";
 })(StaffPermission || (StaffPermission = {}));
 //# sourceMappingURL=auth.js.map

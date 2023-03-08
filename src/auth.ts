@@ -9,7 +9,7 @@ export enum AuthError {
 export enum StaffPermission {
   /**
    * To add, remove and update a staff.
-   * Staff can natually alter themselves.
+   * Staff can natually alter themselves without this permission.
    */
   alterStaffs = "alterStaffs",
   /**
@@ -25,7 +25,11 @@ export enum StaffPermission {
    */
   alterStudentInfo = "alterStudentInfo",
   /**
-   * To update the detail of students, such as phone number. 
+   * To update the detail of students, such as phone number.
    */
   alterStudentDetail = "alterStudentDetail",
+  /**
+  * To add, remove and update an item.
+  */
+  alterItems = "alterItems",
 }
