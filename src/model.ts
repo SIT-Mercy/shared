@@ -3,22 +3,28 @@ import { StaffPermission } from "./auth.js"
 
 export type Int = number
 export type Double = number
-export type Amount = Int | number
-export type Point = Int | number
+export type Amount = Int
+export type Point = Int
 
 export enum StudentError {
-  notFound = "studentNotFound",
-  invalidQuery = "invalidStudentQuery",
+  notFound = "notFound",
+  invalidQuery = "invalidQuery",
   alreadyExists = "alreadyExists",
-  invalidInfo = "invalidStudentInfo",
+  invalidInfo = "invalidInfo",
 }
 
 export enum StaffError {
   noPermission = "noPermission",
-  notFound = "staffNotFound",
-  invalidInfo = "invalidStaffInfo",
+  notFound = "notFound",
+  invalidInfo = "invalidInfo",
   alreadyExists = "alreadyExists",
-  invalidQuery = "invalidStaffQuery"
+  invalidQuery = "invalidQuery"
+}
+
+export enum ItemError {
+  invalidInfo = "invalidInfo",
+  notFound = "notFound",
+  invalidQuery = "invalidQuery"
 }
 
 export enum PoorLevel {
@@ -48,7 +54,7 @@ export interface Student {
   /**
    * To keep concurrency
    */
-  version: Int | number
+  version: Int
 }
 
 export interface Staff {
@@ -92,8 +98,8 @@ export interface PointChangeRecord {
   _id: ObjectId
   subject_id: ObjectId
   operator_id: ObjectId
-  beforeChange: Point | number
-  afterChange: Point | number
+  beforeChange: Point
+  afterChange: Point
   reason: PointChangeReason | null
   /**
    * Immutable
@@ -106,10 +112,10 @@ export interface TranscationRecord {
   customer_id: ObjectId
   operator_id: ObjectId
   item_id: ObjectId
-  amount: Amount | number
-  unitPrice: Point | number
-  priceFactor: Double | number
-  finalTotalPrice: Point | number
+  amount: Amount
+  unitPrice: Point
+  priceFactor: Double
+  finalTotalPrice: Point
   notes: string | null
   /**
    * Immutable
@@ -123,11 +129,16 @@ export interface Item {
   description: string
   price: Point | null
   rent: Point | null
-  poorPriceFactor: Double | number
+  poorPriceFactor: Double
   /**
    * Immutable
    */
   creationTime: Date
+  version: Int
+  /**
+  * Whether the item is .
+  */
+  active: boolean
 }
 
 enum ItemAmountChangeReason {
@@ -184,5 +195,5 @@ export interface RentalRecord {
   /**
    * To keep concurrency
    */
-  version: Int | number
+  version: Int
 }
